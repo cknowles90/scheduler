@@ -25,7 +25,7 @@ function InterviewerList(props) {
       <ul className="interviewers__list">{interviewers}</ul>
     </section>
   );
-}
+};
 
 InterviewerList.propTypes = {
   value: PropTypes.number,

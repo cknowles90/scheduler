@@ -1,3 +1,10 @@
+import axios from 'axios';
+
+/* test number five */
+it("shows the save error when failing to save an appointment", () => {
+  axios.put.mockRejectedValueOnce();
+});
+
 const fixtures = {
   days: [
     {
@@ -54,6 +61,7 @@ const fixtures = {
 };
 
 export default {
+  defaults: { baseURL: "" },
   get: jest.fn(url => {
     if (url === "/api/days") {
       return Promise.resolve({
@@ -64,6 +72,7 @@ export default {
     }
     if (url === "/api/appointments") {
       return Promise.resolve({
+        /* Resolve appointments data */
         status: 200,
         statusText: "OK",
         data: fixtures.appointments
@@ -71,6 +80,7 @@ export default {
     }
     if (url === "/api/interviewers") {
       return Promise.resolve({
+        /* Resolve interviewers data */
         status: 200,
         statusText: "OK",
         data: fixtures.interviewers
